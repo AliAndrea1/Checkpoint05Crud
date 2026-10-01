@@ -181,6 +181,12 @@ Exemplo:
 
 ![Listar produtos](docs/Listar.jpg)
 
+## Vídeo de apresentação
+
+A demonstração completa do funcionamento da aplicação está disponível no YouTube:
+
+**[Assistir à apresentação no YouTube](https://www.youtube.com/watch?classId=c064edb7-12ac-4bd3-b0b1-bfbc9c09777a&assignmentId=f4d0997e-1026-4d68-a398-1e4bdcb89355&submissionId=f2f7a1ab-4b8f-d86f-26a6-a724c05e48fb&v=2e39F6aaVD0&feature=youtu.be)**
+
 ## Requisitos implementados
 
 - CRUD completo de produtos;
