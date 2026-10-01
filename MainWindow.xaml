@@ -1,0 +1,233 @@
+﻿<Window x:Class="Checkpoint05Crud.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Gerenciamento de Produtos"
+        Height="650"
+        Width="1000"
+        WindowStartupLocation="CenterScreen"
+        Background="#FFF8FA">
+
+    <Window.Resources>
+
+        <Style x:Key="BotaoPrincipal" TargetType="Button">
+            <Setter Property="Background" Value="#FFB5CD"/>
+            <Setter Property="Foreground" Value="#4A2633"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Padding" Value="18,5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="8,5"/>
+            <Setter Property="Margin" Value="0,5,0,10"/>
+            <Setter Property="BorderBrush" Value="#FFB5CD"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="#4A2633"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Margin="30">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.Row="0"
+                    HorizontalAlignment="Center"
+                    Margin="0,0,0,20">
+
+            <TextBlock Text="Cadastro de Produtos"
+                       FontSize="30"
+                       FontWeight="Bold"
+                       Foreground="#4A2633"
+                       HorizontalAlignment="Center"/>
+
+            <TextBlock Text="Gerencie os produtos cadastrados no sistema"
+                       FontSize="14"
+                       Foreground="#80606B"
+                       HorizontalAlignment="Center"
+                       Margin="0,5,0,0"/>
+
+        </StackPanel>
+
+
+        <Border Grid.Row="1"
+                Background="White"
+                CornerRadius="12"
+                Padding="25"
+                BorderBrush="#FFE1EB"
+                BorderThickness="1"
+                HorizontalAlignment="Center"
+                Width="650">
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="170"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+
+                <Label Grid.Row="0"
+                       Grid.Column="0"
+                       Content="ID:"/>
+
+                <TextBox x:Name="txtId"
+                         Grid.Row="0"
+                         Grid.Column="1"/>
+
+
+                <Label Grid.Row="1"
+                       Grid.Column="0"
+                       Content="Nome:"/>
+
+                <TextBox x:Name="txtNome"
+                         Grid.Row="1"
+                         Grid.Column="1"
+                         Grid.ColumnSpan="4"/>
+
+
+                <Label Grid.Row="2"
+                       Grid.Column="0"
+                       Content="Preço:"/>
+
+                <TextBox x:Name="txtPreco"
+                         Grid.Row="2"
+                         Grid.Column="1"/>
+
+
+                <Label Grid.Row="2"
+                       Grid.Column="3"
+                       Content="Estoque:"/>
+
+                <TextBox x:Name="txtEstoque"
+                         Grid.Row="2"
+                         Grid.Column="4"/>
+
+
+                <Label Grid.Row="3"
+                       Grid.Column="0"
+                       Content="Categoria:"/>
+
+                <TextBox x:Name="txtCategoria"
+                         Grid.Row="3"
+                         Grid.Column="1"
+                         Grid.ColumnSpan="4"/>
+
+            </Grid>
+
+        </Border>
+
+        <WrapPanel Grid.Row="2"
+                   HorizontalAlignment="Center"
+                   Margin="0,15">
+
+            <Button x:Name="btnInserir"
+            Content="Inserir"
+            Click="BtnInserir_Click"
+            Style="{StaticResource BotaoPrincipal}"/>
+
+                <Button x:Name="btnListar"
+            Content="Listar"
+            Click="BtnListar_Click"
+            Style="{StaticResource BotaoPrincipal}"/>
+
+                <Button x:Name="btnBuscar"
+            Content="Buscar por ID"
+            Click="BtnBuscar_Click"
+            Style="{StaticResource BotaoPrincipal}"/>
+
+                <Button x:Name="btnAtualizar"
+            Content="Atualizar"
+            Click="BtnAtualizar_Click"
+            Style="{StaticResource BotaoPrincipal}"/>
+
+                <Button x:Name="btnExcluir"
+            Content="Excluir"
+            Click="BtnExcluir_Click"
+            Style="{StaticResource BotaoPrincipal}"/>
+
+                <Button x:Name="btnLimpar"
+            Content="Limpar"
+            Click="BtnLimpar_Click"
+            Style="{StaticResource BotaoPrincipal}"/>
+
+        </WrapPanel>
+
+
+        <Border Grid.Row="3"
+                Background="White"
+                CornerRadius="12"
+                Padding="10"
+                BorderBrush="#FFE1EB"
+                BorderThickness="1">
+
+            <DataGrid x:Name="dgProdutos"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      CanUserAddRows="False"
+                      GridLinesVisibility="Horizontal"
+                      BorderThickness="0"
+                      RowHeight="35"
+                      HeadersVisibility="Column">
+
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="ID"
+                                        Binding="{Binding Id}"
+                                        Width="70"/>
+
+                    <DataGridTextColumn Header="Nome"
+                                        Binding="{Binding Nome}"
+                                        Width="*"/>
+
+                    <DataGridTextColumn Header="Preço"
+                                        Binding="{Binding Preco, StringFormat=C}"
+                                        Width="130"/>
+
+                    <DataGridTextColumn Header="Estoque"
+                                        Binding="{Binding Estoque}"
+                                        Width="100"/>
+
+                    <DataGridTextColumn Header="Categoria"
+                                        Binding="{Binding Categoria}"
+                                        Width="180"/>
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+        </Border>
+
+    </Grid>
+
+</Window>
