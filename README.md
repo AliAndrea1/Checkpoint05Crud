@@ -45,7 +45,6 @@ Checkpoint05Crud/
 ├── MainWindow.xaml
 ├── MainWindow.xaml.cs
 ├── appsettings.json
-└── Checkpoint05Crud.csproj
 ```
 
 ## Banco de dados
