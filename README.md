@@ -171,15 +171,15 @@ Exemplo:
 
 ### Inserção de produto
 
-![Inserir produto](docs/inserir.jpg)
+![Inserir produto](docs/Inserir.jpg)
 
 ### Busca de produto
 
-![Buscar produto](docs/buscar.jpg)
+![Buscar produto](docs/Buscar.jpg)
 
 ### Listagem de produtos
 
-![Listar produtos](docs/listar.jpg)
+![Listar produtos](docs/Listar.jpg)
 
 ## Requisitos implementados
 
